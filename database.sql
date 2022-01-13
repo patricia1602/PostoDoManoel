@@ -44,3 +44,5 @@ insert into abastecimento
 values
 (1, 1, 5, 14.45)
 ; 
+
+select * from abastecimento;
