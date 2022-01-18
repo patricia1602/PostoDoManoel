@@ -46,3 +46,23 @@ values
 ; 
 
 select * from abastecimento;
+
+use postodomanoel;
+
+select * from abastecimento;
+
+create table frentista (
+id integer auto_increment not null,
+nome varchar(50) not null, 
+primary key(id)
+);
+
+select * from frentista;
+
+insert into frentista
+(nome)
+values
+('Alex')
+; 
+
+select * from frentista;

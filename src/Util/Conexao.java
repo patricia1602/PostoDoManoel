@@ -10,11 +10,11 @@ public class Conexao {
     private static final String URL_CONEXAO = "jdbc:mysql://127.0.0.1:3306/postodomanoel";
     private static final String USUARIO = "root";
     private static final String SENHA = "1234";
-    
+
     public static void main(String[] args) {
         getConexao();
     }
-    
+
     public static Connection getConexao() {
         if (conexao == null) {
             try {
