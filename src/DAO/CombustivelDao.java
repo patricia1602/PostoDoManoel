@@ -47,8 +47,8 @@ public class CombustivelDao {
             throw new SQLException("Erro ao tentar salvar!", ex);
         }
     }
-    
-     public void alterar(CombustivelBean combustivelBean) throws SQLException {
+
+    public void alterar(CombustivelBean combustivelBean) throws SQLException {
         try {
             Connection conexao = Conexao.getConexao();
             PreparedStatement ps = conexao.prepareStatement("update combustivel set nome=?, valor_unidade=? where id=?");
@@ -98,7 +98,8 @@ public class CombustivelDao {
     public List<CombustivelBean> buscar(String param) throws SQLException {
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("select * from combustivel where id like '%" + param + "%' || nome like '%" + param + "%' || valor_unidade like '%" + param + "%'");
+            PreparedStatement ps = conexao.prepareStatement("select * from combustivel where id like '%" + param + "%' ||"
+                    + " nome like '%" + param + "%' || valor_unidade like '%" + param + "%'");
             ResultSet resultSet = ps.executeQuery();
             List<CombustivelBean> listCombustivelBean = new ArrayList<>();
             while (resultSet.next()) {

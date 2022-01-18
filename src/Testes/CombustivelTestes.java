@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Testes;
 
 import Bean.CombustivelBean;
@@ -10,10 +5,6 @@ import Service.CombustivelService;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- *
- * @author leona
- */
 public class CombustivelTestes {
 
     CombustivelService combustivelService = new CombustivelService();
@@ -26,9 +17,9 @@ public class CombustivelTestes {
         //t.buscar("GNV");
 
         /*CombustivelBean pCombustivelBean = new CombustivelBean();
-        pCombustivelBean.setNome("Diesel");
-        pCombustivelBean.setValorUnidade(1.10);
-        t.salvar(pCombustivelBean);*/
+ pCombustivelBean.setNome("Diesel");
+ pCombustivelBean.setValorUnidade(1.10);
+ t.salvar(pCombustivelBean);*/
     }
 
     //listar
@@ -45,8 +36,8 @@ public class CombustivelTestes {
             mostraCombustiveis(listaCombustiveis);
         } else {
             System.out.println("Nenhum combustivel '" + param + "' encontrado.");
-        }
 
+        }
     }
 
     public void salvar(CombustivelBean pCombustivelBean) throws SQLException {
@@ -56,7 +47,6 @@ public class CombustivelTestes {
 
     public void deletar(Integer pId) throws SQLException {
         combustivelService.deletar(pId);
-
     }
 
     public void mostraCombustiveis(List<CombustivelBean> listaCombustiveis) {
@@ -68,5 +58,4 @@ public class CombustivelTestes {
             System.out.println("\n<------------------------------------------->\n");
         }
     }
-
 }
