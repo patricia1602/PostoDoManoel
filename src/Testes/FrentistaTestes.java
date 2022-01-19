@@ -11,11 +11,14 @@ public class FrentistaTestes {
     
     public static void main(String[] args) throws SQLException {
         FrentistaTestes t = new FrentistaTestes();
+        FrentistaBean pFrentistaBean = new FrentistaBean();
 
-        //t.deletar(5);
-        t.listar();
-        //t.buscar("GNV");
+        //t.deletar(2);
+          t.listar();
+        //t.buscar("Leo");
         
+       // pFrentistaBean.setNome("Leo");
+       //t.salvar(pFrentistaBean);
     }
 
     //listar
@@ -34,10 +37,12 @@ public class FrentistaTestes {
             System.out.println("Nenhum frentista '" + param + "' encontrado.");
         }
     }
-    
+
+    //salvar
     public void salvar(FrentistaBean pFrentistaBean) throws SQLException {
         frentistaService.salvar(pFrentistaBean);
         buscar(pFrentistaBean.getNome());
+        
     }
     
     public void deletar(Integer pId) throws SQLException {

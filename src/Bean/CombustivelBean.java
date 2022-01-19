@@ -29,5 +29,4 @@ public class CombustivelBean {
     public void setValorUnidade(double valorUnidade) {
         this.valorUnidade = valorUnidade;
     }
-
 }

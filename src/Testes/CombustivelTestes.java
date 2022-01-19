@@ -11,15 +11,15 @@ public class CombustivelTestes {
 
     public static void main(String[] args) throws SQLException {
         CombustivelTestes t = new CombustivelTestes();
+        CombustivelBean pCombustivelBean = new CombustivelBean();
 
-        //t.deletar(5);
-        t.listar();
-        //t.buscar("GNV");
-
-        /*CombustivelBean pCombustivelBean = new CombustivelBean();
- pCombustivelBean.setNome("Diesel");
- pCombustivelBean.setValorUnidade(1.10);
- t.salvar(pCombustivelBean);*/
+       // t.deletar(6);
+          t.listar();
+       // t.buscar("GNV");
+        
+      //  pCombustivelBean.setNome("Gasolina");
+      //  pCombustivelBean.setValorUnidade(1.10);
+      //  t.salvar(pCombustivelBean);
     }
 
     //listar
@@ -59,3 +59,4 @@ public class CombustivelTestes {
         }
     }
 }
+  

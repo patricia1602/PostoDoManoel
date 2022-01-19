@@ -15,13 +15,13 @@ public class FrentistaDao {
 
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("INSERT INTO 'frentista'('nome')values(?)");
+            PreparedStatement ps = conexao.prepareStatement("INSERT INTO frentista(nome) VALUES(?)");
             ps.setString(1, frentistaBean.getNome());
 
             ps.execute();
             Conexao.fecharConexao();
-        } catch (Exception e) {
-            throw new SQLException("Erro ao tentar salvar!", e);
+        } catch (SQLException ex) {
+            throw new SQLException("Erro ao tentar salvar!", ex);
         }
     }
 
@@ -42,8 +42,9 @@ public class FrentistaDao {
     public void deletar(Integer pId) throws SQLException {
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("delete from fentista where id = ?");
+            PreparedStatement ps = conexao.prepareStatement("delete from frentista where id = ?");
             ps.setInt(1, pId);
+            
             ps.execute();
         } catch (SQLException ex) {
             throw new SQLException("Erro ao deletar!", ex);

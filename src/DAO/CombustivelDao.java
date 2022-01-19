@@ -37,7 +37,8 @@ public class CombustivelDao {
     public void salvar(CombustivelBean combustivelBean) throws SQLException {
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("INSERT INTO `combustivel` (`nome`,`valor_unidade`) VALUES (?,?)");
+            PreparedStatement ps = conexao.prepareStatement("INSERT INTO `combustivel` (`nome`,`valor_unidade`) "
+                    + "VALUES (?,?)");
             ps.setString(1, combustivelBean.getNome());
             ps.setDouble(2, combustivelBean.getValorUnidade());
 
@@ -98,8 +99,8 @@ public class CombustivelDao {
     public List<CombustivelBean> buscar(String param) throws SQLException {
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("select * from combustivel where id like '%" + param + "%' ||"
-                    + " nome like '%" + param + "%' || valor_unidade like '%" + param + "%'");
+            PreparedStatement ps = conexao.prepareStatement("select * from combustivel where id like '%" + param + "%' "
+                    + "||" + " nome like '%" + param + "%' || valor_unidade like '%" + param + "%'");
             ResultSet resultSet = ps.executeQuery();
             List<CombustivelBean> listCombustivelBean = new ArrayList<>();
             while (resultSet.next()) {
