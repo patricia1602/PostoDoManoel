@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 
 public class AbastecimentoBean {
 
-    private int id;
+    private Integer id;
     private String idCombustivel;
     private int quantidadeLitro;
     private BigDecimal valorTotal;
     private String idFrentista;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
