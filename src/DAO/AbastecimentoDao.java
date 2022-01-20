@@ -15,12 +15,11 @@ public class AbastecimentoDao {
 
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("INSERT INTO 'abastecimento'"
-                    + "('idCombustivel', 'quantidade_litro', 'valor_Total', 'idFrentista')"
+            PreparedStatement ps = conexao.prepareStatement("INSERT INTO abastecimento(id_combustivel, quantidade_litro, valor_total, id_frentista)"
                     + "VALUES(?,?,?,?)");
-            ps.setString(1, abastecimentoBean.getIdCombustivel());
+            ps.setInt(1, abastecimentoBean.getIdCombustivel());
             ps.setDouble(2, abastecimentoBean.getQuantidadeLitro());
-            ps.setDouble (3, abastecimentoBean.getValorTotal());
+            ps.setDouble(3, abastecimentoBean.getValorTotal());
             ps.setInt(4, abastecimentoBean.getIdFrentista());
 
             ps.execute();
@@ -34,9 +33,9 @@ public class AbastecimentoDao {
 
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("update abastecimento set nome=?,"
-                    + " quantidade_litro=?, valor_total=?, frentista");
-            ps.setString(1, abastecimentoBean.getIdCombustivel());
+            PreparedStatement ps = conexao.prepareStatement("update abastecimento set id_combustivel=?,"
+                    + " quantidade_litro=?, valor_total=?, id_frentista, where id=?");
+            ps.setInt(1, abastecimentoBean.getIdCombustivel());
             ps.setDouble(2, abastecimentoBean.getQuantidadeLitro());
             ps.setDouble(3, abastecimentoBean.getValorTotal());
             ps.setInt(4, abastecimentoBean.getIdFrentista());
@@ -52,7 +51,7 @@ public class AbastecimentoDao {
     public void deletar(Integer pId) throws SQLException {
         try {
             Connection conexao = Conexao.getConexao();
-            PreparedStatement ps = conexao.prepareStatement("delete from abastecimento where id = ?");
+            PreparedStatement ps = conexao.prepareStatement("delete from abastecimento where id=?");
             ps.setInt(1, pId);
             ps.execute();
         } catch (SQLException ex) {
@@ -69,10 +68,10 @@ public class AbastecimentoDao {
             while (resultSet.next()) {
                 AbastecimentoBean abastecimentoBean = new AbastecimentoBean();
                 abastecimentoBean.setId(resultSet.getInt("id"));
-                abastecimentoBean.setIdCombustivel(resultSet.getString("idCombustivel"));
+                abastecimentoBean.setIdCombustivel(resultSet.getInt("id_combustivel"));
                 abastecimentoBean.setQuantidadeLitro(resultSet.getInt("quantidade_litro"));
                 abastecimentoBean.setValorTotal(resultSet.getDouble("valor_total"));
-                abastecimentoBean.setId(resultSet.getInt("idFrentista"));
+                abastecimentoBean.setId(resultSet.getInt("id_frentista"));
                 listAbastecimentoBean.add(abastecimentoBean);
 
             }
@@ -88,22 +87,23 @@ public class AbastecimentoDao {
 
         try {
             Connection conexao = Conexao.getConexao();
+            
             PreparedStatement ps = conexao.prepareStatement("select * from abastecimento "
-                    + "where id like '%" + param + "%' "
-                    + "||" + " idCombustivel like '%" + param + "%'"
-                    + " || quantidade_litro like '%" + param + "%'" + ""
-                    + "|| valor_total like '%" + param + "%" + "||"
-                            + " idFrentista '%" + param + "%");
+                    + "where id like '%" + param + "%'" + "||"
+                            + " id_combustivel like '%" + param + "%'" + "||"
+                     + " quantidade_litro like '%" + param + "%'" + "||"
+                             + " valor_total like '%" + param + "%'" + "||"
+                    + " id_frentista '%" + param + "%'");
 
             ResultSet resultSet = ps.executeQuery();
             List<AbastecimentoBean> listAbastecimentoBean = new ArrayList<>();
             while (resultSet.next()) {
                 AbastecimentoBean abastecimentoBean = new AbastecimentoBean();
                 abastecimentoBean.setId(resultSet.getInt("id"));
-                abastecimentoBean.setIdCombustivel(resultSet.getString("nome"));
+                abastecimentoBean.setIdCombustivel(resultSet.getInt("id_combustivel"));
                 abastecimentoBean.setQuantidadeLitro(resultSet.getInt("quantidade_litro"));
                 abastecimentoBean.setValorTotal(resultSet.getDouble("valor_total"));
-                abastecimentoBean.setId(resultSet.getInt("idFrentista"));
+                abastecimentoBean.setId(resultSet.getInt("id_frentista"));
                 listAbastecimentoBean.add(abastecimentoBean);
 
             }

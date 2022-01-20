@@ -14,11 +14,11 @@ public class AbastecimentoTestes {
         AbastecimentoTestes t = new AbastecimentoTestes();
         AbastecimentoBean pAbastecimentoBean = new AbastecimentoBean();
 
-        // t.deletar(6);
-        t.listar();
-        // t.buscar("GNV");
-
-        // pAbastecimentoBean.setIdCombustivel(1);
+        //t.deletar(6);
+        //t.listar();
+        t.buscar("DIESEL");
+        
+        //pAbastecimentoBean.setIdCombustivel(1);
         //pAbastecimentoBean.setQuantidadeLitro(2);
         //pAbastecimentoBean.setValorTotal(2.50);
         //pAbastecimentoBean.setIdFrentista(1);
@@ -45,7 +45,7 @@ public class AbastecimentoTestes {
 
     public void salvar(AbastecimentoBean pAbastecimentoBean) throws SQLException {
         abastecimentoService.salvar(pAbastecimentoBean);
-        buscar(pAbastecimentoBean.getIdCombustivel());
+        // buscar(pAbastecimentoBean.getIdCombustivel());
     }
 
     public void deletar(Integer pId) throws SQLException {
@@ -55,11 +55,11 @@ public class AbastecimentoTestes {
     public void mostraAbastecimento(List<AbastecimentoBean> listaAbastecimento) {
         for (int i = 0; i < listaAbastecimento.size(); i++) {
             System.out.println("\n<------------------------------------------->\n");
-            System.out.println(" ID: " + listaAbastecimento.get(i).getId());
-            System.out.println(" NOME: " + listaAbastecimento.get(i).getIdCombustivel());
-            System.out.println(" QUANTIDADE_LITRO: " + listaAbastecimento.get(i).getQuantidadeLitro());
+            System.out.println("ID: " + listaAbastecimento.get(i).getId());
+            System.out.println("ID_COMBUSTIVEL:" + listaAbastecimento.get(i).getIdCombustivel());
+            System.out.println("QUANTIDADE_LITRO:" + listaAbastecimento.get(i).getQuantidadeLitro());
             System.out.println("VALOR_TOTAL:" + listaAbastecimento.get(i).getValorTotal());
-            System.out.println("ID:" + listaAbastecimento.get(i).getIdFrentista());
+            System.out.println("ID FRENTISTA:" + listaAbastecimento.get(i).getIdFrentista());
             System.out.println("\n<------------------------------------------->\n");
         }
     }

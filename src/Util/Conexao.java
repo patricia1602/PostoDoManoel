@@ -22,7 +22,7 @@ public class Conexao {
                 conexao = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
                 //System.out.println("conectou");
             } catch (SQLException e) {
-                System.out.println("deu merda1 " + e);
+              System.out.println("deu merda1 " + e);
             } catch (ClassNotFoundException ex) {
                 System.out.println("deu merda2 " + ex);
             }

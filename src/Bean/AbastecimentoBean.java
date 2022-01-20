@@ -3,7 +3,7 @@ package Bean;
 public class AbastecimentoBean {
 
     private Integer id;
-    private String idCombustivel;
+    private Integer idCombustivel;
     private int quantidadeLitro;
     private double valorTotal;
     private Integer idFrentista;
@@ -16,11 +16,11 @@ public class AbastecimentoBean {
         this.id = id;
     }
 
-    public String getIdCombustivel() {
+    public Integer getIdCombustivel() {
         return idCombustivel;
     }
 
-    public void setIdCombustivel(String idCombustivel) {
+    public void setIdCombustivel(Integer idCombustivel) {
         this.idCombustivel = idCombustivel;
     }
 
