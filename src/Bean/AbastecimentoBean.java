@@ -1,14 +1,12 @@
 package Bean;
 
-import java.math.BigDecimal;
-
 public class AbastecimentoBean {
 
     private Integer id;
     private String idCombustivel;
     private int quantidadeLitro;
-    private BigDecimal valorTotal;
-    private String idFrentista;
+    private double valorTotal;
+    private Integer idFrentista;
 
     public Integer getId() {
         return id;
@@ -16,6 +14,14 @@ public class AbastecimentoBean {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getIdCombustivel() {
+        return idCombustivel;
+    }
+
+    public void setIdCombustivel(String idCombustivel) {
+        this.idCombustivel = idCombustivel;
     }
 
     public int getQuantidadeLitro() {
@@ -26,30 +32,19 @@ public class AbastecimentoBean {
         this.quantidadeLitro = quantidadeLitro;
     }
 
-    public BigDecimal getValorTotal() {
+    public double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(BigDecimal valorTotal) {
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 
-    public String getIdFrentista() {
+    public Integer getIdFrentista() {
         return idFrentista;
     }
 
-    public void setIdFrentista(String idFrentista) {
+    public void setIdFrentista(Integer idFrentista) {
         this.idFrentista = idFrentista;
     }
-
-    public String getIdCombustivel() {
-        return idCombustivel;
-    }
-
-    public void setIdCombustivel(String idCombustivel) {
-        this.idCombustivel = idCombustivel;
-    }
-    
-    
-   
 }
