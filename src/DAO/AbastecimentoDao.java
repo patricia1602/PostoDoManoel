@@ -87,14 +87,9 @@ public class AbastecimentoDao {
 
         try {
             Connection conexao = Conexao.getConexao();
-            
-            PreparedStatement ps = conexao.prepareStatement("select * from abastecimento "
-                    + "where id like '%" + param + "%'" + "||"
-                            + " id_combustivel like '%" + param + "%'" + "||"
-                     + " quantidade_litro like '%" + param + "%'" + "||"
-                             + " valor_total like '%" + param + "%'" + "||"
-                    + " id_frentista '%" + param + "%'");
 
+            PreparedStatement ps = conexao.prepareStatement("select * from abastecimento where id like '%" + param + "%' ||id_combustivel like '%" + param + "%' ||quantidade_litro like '%" + param + "%' ||valor_total like '%" + param + "%' ||id_frentista like '%" + param + "%'");
+            
             ResultSet resultSet = ps.executeQuery();
             List<AbastecimentoBean> listAbastecimentoBean = new ArrayList<>();
             while (resultSet.next()) {

@@ -14,9 +14,9 @@ public class AbastecimentoTestes {
         AbastecimentoTestes t = new AbastecimentoTestes();
         AbastecimentoBean pAbastecimentoBean = new AbastecimentoBean();
 
-        //t.deletar(6);
-        //t.listar();
-        t.buscar("DIESEL");
+        //t.deletar(2);
+        t.listar();
+       //t.buscar("gasolina");
         
         //pAbastecimentoBean.setIdCombustivel(1);
         //pAbastecimentoBean.setQuantidadeLitro(2);
