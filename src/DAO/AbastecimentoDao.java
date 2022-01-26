@@ -69,9 +69,9 @@ public class AbastecimentoDao {
                 AbastecimentoBean abastecimentoBean = new AbastecimentoBean();
                 abastecimentoBean.setId(resultSet.getInt("id"));
                 abastecimentoBean.setIdCombustivel(resultSet.getInt("id_combustivel"));
-                abastecimentoBean.setQuantidadeLitro(resultSet.getInt("quantidade_litro"));
+                abastecimentoBean.setQuantidadeLitro((int) resultSet.getDouble("quantidade_litro"));
                 abastecimentoBean.setValorTotal(resultSet.getDouble("valor_total"));
-                abastecimentoBean.setId(resultSet.getInt("id_frentista"));
+                abastecimentoBean.setIdFrentista(resultSet.getInt("id_frentista"));
                 listAbastecimentoBean.add(abastecimentoBean);
 
             }
@@ -96,9 +96,9 @@ public class AbastecimentoDao {
                 AbastecimentoBean abastecimentoBean = new AbastecimentoBean();
                 abastecimentoBean.setId(resultSet.getInt("id"));
                 abastecimentoBean.setIdCombustivel(resultSet.getInt("id_combustivel"));
-                abastecimentoBean.setQuantidadeLitro(resultSet.getInt("quantidade_litro"));
+                abastecimentoBean.setQuantidadeLitro((int) resultSet.getDouble("quantidade_litro"));
                 abastecimentoBean.setValorTotal(resultSet.getDouble("valor_total"));
-                abastecimentoBean.setId(resultSet.getInt("id_frentista"));
+                abastecimentoBean.setIdFrentista(resultSet.getInt("id_frentista"));
                 listAbastecimentoBean.add(abastecimentoBean);
 
             }

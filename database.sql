@@ -30,7 +30,7 @@ values
 create table abastecimento (
 id integer auto_increment not null,
 id_combustivel integer not null,
-id_frentista integer null,
+id_frentista integer not null,
 quantidade_litro double not null, 
 valor_total double not null,
 primary key(id)
@@ -66,3 +66,7 @@ values
 ; 
 
 select * from frentista;
+
+select * from abastecimento;
+
+select * from combustivel;

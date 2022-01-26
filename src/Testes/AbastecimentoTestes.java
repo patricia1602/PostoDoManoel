@@ -14,15 +14,16 @@ public class AbastecimentoTestes {
         AbastecimentoTestes t = new AbastecimentoTestes();
         AbastecimentoBean pAbastecimentoBean = new AbastecimentoBean();
 
-        //t.deletar(2);
-        t.listar();
-       //t.buscar("gasolina");
-        
-        //pAbastecimentoBean.setIdCombustivel(1);
-        //pAbastecimentoBean.setQuantidadeLitro(2);
-        //pAbastecimentoBean.setValorTotal(2.50);
-        //pAbastecimentoBean.setIdFrentista(1);
-        //t.salvar(pAbastecimentoBean);
+        //t.deletar(4);
+        //t.listar();
+        t.buscar("1");
+        /*  
+        pAbastecimentoBean.setIdCombustivel(2);
+        pAbastecimentoBean.setQuantidadeLitro(1);
+        pAbastecimentoBean.setValorTotal(0.99);
+        pAbastecimentoBean.setIdFrentista(2);
+        t.salvar(pAbastecimentoBean);
+        */
     }
 
     //listar
@@ -59,7 +60,7 @@ public class AbastecimentoTestes {
             System.out.println("ID_COMBUSTIVEL:" + listaAbastecimento.get(i).getIdCombustivel());
             System.out.println("QUANTIDADE_LITRO:" + listaAbastecimento.get(i).getQuantidadeLitro());
             System.out.println("VALOR_TOTAL:" + listaAbastecimento.get(i).getValorTotal());
-            System.out.println("ID FRENTISTA:" + listaAbastecimento.get(i).getIdFrentista());
+            System.out.println("ID_FRENTISTA:" + listaAbastecimento.get(i).getIdFrentista());
             System.out.println("\n<------------------------------------------->\n");
         }
     }
